@@ -22,7 +22,7 @@ my_new_car.read_odometer()
 my_new_car.update_odometer(10)
 my_new_car.read_odometer()
 
-my_new_car.increment_odometer(500)
+my_new_car.increment_odometer(-500)
 my_new_car.read_odometer()
 my_new_car.fill_gas_tank()
 

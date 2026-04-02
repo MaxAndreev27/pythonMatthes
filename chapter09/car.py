@@ -26,7 +26,10 @@ class Car:
 
     def increment_odometer(self, miles):
         """Увеличивает показания одометра с заданным приращением."""
-        self.odometer += miles
+        if miles > 0:
+            self.odometer += miles
+        else:
+            print("You can't roll back an odometer!")
 
     def fill_gas_tank(self):
         """Заправка бака."""
