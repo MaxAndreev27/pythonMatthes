@@ -1,2 +1,17 @@
+# Віртуальне середовище (найважливіше)
+.venv/
+venv/
+ENV/
+
+# Кеш Python (байт-код)
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Кеш тестування (pytest)
+.pytest_cache/
+.cache/
+
+# Налаштування VS Code (опціонально, але корисно)
+.vscode/
