@@ -26,7 +26,7 @@ class Bullet(Sprite):
         # Обновление точной позиции снаряда.
         self.y -= self.settings.bullet_speed
         # Обновление позиции прямоугольника.
-        self.rect.y = self.y
+        self.rect.y = int(self.y)
 
     def draw_bullet(self):
         """Выводит снаряд на экран."""

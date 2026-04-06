@@ -1,4 +1,5 @@
 import os
+
 import pygame
 
 
@@ -29,6 +30,11 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
 
+    def center_ship(self):
+        """Center the ship on the screen."""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
+
     def update(self):
         """Обновляет позицию корабля с учетом флага."""
         if self.moving_right and self.rect.right < self.screen_rect.right:
@@ -37,7 +43,7 @@ class Ship:
             self.x -= self.settings.ship_speed
 
         # Обновление атрибута rect на основании self.x.
-        self.rect.x = self.x
+        self.rect.x = int(self.x)
 
     def blitme(self):
         """Draw the ship at its current location."""
