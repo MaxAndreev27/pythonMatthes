@@ -14,13 +14,7 @@ class AlienInvasion:
         self.clock = pygame.time.Clock()
         self.settings = Settings()
 
-        # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-        # self.settings.screen_width = self.screen.get_rect().width
-        # self.settings.screen_height = self.screen.get_rect().height
-
-        self.screen = pygame.display.set_mode(
-            (self.settings.screen_width, self.settings.screen_height)
-        )
+        self._set_screen_mode()
 
         pygame.display.set_caption("Alien Invasion")
 
@@ -35,6 +29,21 @@ class AlienInvasion:
             self._update_bullets()
             self._update_screen()
             self.clock.tick(60)
+
+    def _set_screen_mode(self):
+        if self.settings.is_fullscreen:
+            # У повному екрані використовуємо (0,0), щоб Pygame сам визначив розмір монітора
+            self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        else:
+            # У віконному режимі беремо значення безпосередньо з класу Settings
+            self.screen = pygame.display.set_mode(
+                (self.settings.screen_width, self.settings.screen_height)
+            )
+        # Оновлюємо дані об'єктів (якщо вони вже створені)
+        if hasattr(self, "ship"):
+            self.ship.screen_rect = self.screen.get_rect()
+            self.ship.rect.midbottom = self.ship.screen_rect.midbottom
+            self.ship.x = float(self.ship.rect.x)
 
     def _check_events(self):
         """Обрабатывает нажатия клавиш и события мыши."""
@@ -54,6 +63,9 @@ class AlienInvasion:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
             sys.exit()
+        elif event.key == pygame.K_f:
+            self.settings.is_fullscreen = not self.settings.is_fullscreen
+            self._set_screen_mode()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
 
