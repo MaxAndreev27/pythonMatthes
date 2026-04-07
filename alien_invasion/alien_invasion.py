@@ -94,6 +94,7 @@ class AlienInvasion:
         """Обрабатывает нажатия клавиш и события мыши."""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                self.stats.save_high_score()
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
@@ -116,6 +117,7 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
+            self.stats.save_high_score()
             sys.exit()
         elif event.key == pygame.K_f:
             self.settings.is_fullscreen = not self.settings.is_fullscreen
@@ -196,8 +198,8 @@ class AlienInvasion:
             sleep(0.5)
         else:
             self.game_active = False
+            self.stats.save_high_score()
             pygame.mouse.set_visible(True)
-            self.stats.write_high_score_to_file()
 
     def _check_aliens_bottom(self):
         """Проверяет, добрались ли пришельцы до нижнего края экрана."""

@@ -8,9 +8,11 @@ class GameStats:
     def __init__(self, ai_game):
         """Initialize statistics."""
         self.settings = ai_game.settings
+        # Визначаємо шлях один раз при ініціалізації
+        self.save_path = Path(__file__).parent / "save.json"
         self.reset_stats()
 
-        # High score should never be reset.
+        # Завантажуємо рекорд
         self.high_score = self._get_high_score_from_file()
 
     def reset_stats(self):
@@ -20,21 +22,20 @@ class GameStats:
         self.level = 1
 
     def _get_high_score_from_file(self):
-        """Loading high_score from file"""
-        base_dir = Path(__file__).parent
-        path = base_dir / "save.json"
+        """Безпечне зчитування рекорду."""
+        if self.save_path.exists():
+            try:
+                with open(self.save_path, "r") as f:
+                    data = json.load(f)
+                    # Якщо ми перейшли на словник:
+                    return data.get("high_score", 0)
+            except (json.JSONDecodeError, AttributeError):
+                return 0  # Якщо файл битий
+        return 0
 
-        if path.exists():
-            contents = path.read_text()
-            record = json.loads(contents)
-        else:
-            record = 0
-
-        return record
-
-    def write_high_score_to_file(self):
-        """Write high_score to the file"""
-        base_dir = Path(__file__).parent
-        path = base_dir / "save.json"
-        contents = json.dumps(self.score)
-        path.write_text(contents)
+    def save_high_score(self):
+        """Запис рекорду лише у форматі словника."""
+        # Готуємо дані для збереження
+        stats_data = {"high_score": self.high_score, "last_level": self.level}
+        with open(self.save_path, "w") as f:
+            json.dump(stats_data, f, indent=4)
