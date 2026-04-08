@@ -10,7 +10,7 @@ class Settings:
         self.bg_color = (230, 230, 230)
 
         # Ship settings.
-        self.ship_limit = 3
+        self.ship_limit = 2
 
         # Bullet settings
         self.bullet_width = 3
@@ -24,7 +24,7 @@ class Settings:
         # How quickly the game speeds up
         self.speedup_scale = 1.2
         # How quickly the alien point values increase
-        self.score_scale = 1.5
+        self.score_scale = 1
 
         self.initialize_dynamic_settings()
 
