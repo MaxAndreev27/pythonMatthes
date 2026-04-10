@@ -18,3 +18,24 @@ __pycache__/
 
 # Сейви для гри
 save.json
+
+# === Django specifics ===
+*.sqlite3
+db.sqlite3-journal
+
+# Секретні налаштування та ключі
+.env
+local_settings.py
+
+# Медіа-файли (завантаження користувачів)
+media/
+
+# Статичні файли (зібрані після collectstatic)
+staticfiles/
+
+# Логи
+*.log
+
+# ОС-специфічні файли
+.DS_Store
+Thumbs.db
