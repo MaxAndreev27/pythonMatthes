@@ -1,5 +1,5 @@
-from pathlib import Path
 import json
+from pathlib import Path
 
 # Read file content
 base_dir = Path(__file__).parent
@@ -62,7 +62,6 @@ except ZeroDivisionError:
 else:
     print(f"Result 5/2={result}")
 
-
 # Exception in file read
 def count_words(path):
     """Подсчитывает приблизительное количество строк в файле."""
@@ -71,11 +70,15 @@ def count_words(path):
     except FileNotFoundError:
         # pass
         print(f"Sorry, the file {path} does not exist.")
+        # Кастомне влесне виключення, якщо треба замінити стандартне
+        # raise NotFoundError(*e.args)
     else:
         # Подсчет приблизительного количества строк в файле.
         words = contents.split()
         num_words = len(words)
         print(f"The file {path} has about {num_words} words.")
+    finally:
+        print("Do after try, except and else")
 
 
 books = ["alice.txt", "siddhartha.txt", "moby_dick.txt", "little_women.txt"]

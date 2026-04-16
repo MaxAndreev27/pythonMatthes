@@ -1,5 +1,5 @@
-from dog import Dog
 from car import Car, ElectricCar
+from dog import Dog
 
 my_dog = Dog(name="Pluto", age="8")
 # print(my_dog)
@@ -25,6 +25,9 @@ my_new_car.read_odometer()
 my_new_car.increment_odometer(-500)
 my_new_car.read_odometer()
 my_new_car.fill_gas_tank()
+
+my_new_car.color = "silver"
+print(f"Car color: {my_new_car.color}")
 
 my_leaf = ElectricCar("nissan", "leaf", 2024)
 print(my_leaf.get_descriptive_name())

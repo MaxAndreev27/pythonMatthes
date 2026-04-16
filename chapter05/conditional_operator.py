@@ -54,3 +54,14 @@ for requested_topping in requested_toppings:
         print(f"Sorry, we don't have {requested_topping}.")
 
 print("\nFinished making your pizza!")
+
+status = 404
+match status:
+    case 200:
+        print("ОК")
+    case 404:
+        print("Сторінку не знайдено")
+    case 500 | 501 | 502:  # Символ | працює як "АБО"
+        print("Помилка сервера")
+    case _:  # Аналог default - спрацює, якщо нічого не підійшло
+        print("Невідомий статус")

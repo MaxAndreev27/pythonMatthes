@@ -1,12 +1,25 @@
 class Car:
     """Простая модель автомобиля."""
 
-    def __init__(self, make, model, year):
+    def __init__(self, make, model, year, color="black"):
         """Инициализирует атрибуты описания автомобиля."""
         self.make = make
         self.model = model
         self.year = year
         self.odometer = 0
+        self._color = color
+
+    @property
+    def color(self):
+        """Це ґеттер: дозволяє писати car.color замість car.get_color()"""
+        return self._color
+
+    @color.setter
+    def color(self, value):
+        """Це сеттер: спрацьовує, коли ми пишемо car.color = 'новий текст'"""
+        if not value:
+            raise ValueError("Текст не може бути порожнім!")
+        self._color = value.strip()
 
     def get_descriptive_name(self):
         """Возвращает отформатированное описание."""

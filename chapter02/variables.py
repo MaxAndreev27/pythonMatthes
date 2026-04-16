@@ -1,3 +1,5 @@
+from decimal import Context, Decimal, getcontext, localcontext, setcontext
+
 # Simple string var
 message = "This is new message"
 print(message)
@@ -26,7 +28,7 @@ print(siteUrl.removeprefix("https://"))
 # Operation with digits
 print(f"4 to the power of 3 = {4**3}")
 
-print(f"Wow result 0.2+0.1 = {0.2+0.1}")
+print(f"Wow result 0.2+0.1 = {0.2 + 0.1}")
 
 print(f"Universe_age = {14_000_000_000}")
 
@@ -38,3 +40,22 @@ MAX_VALUE = 5_000
 print(f"MAX_VALUE: {MAX_VALUE}")
 
 # The Zen of Python, by Tim Peters Write in python terminal: import this
+
+# About Context
+one = Decimal("1")
+three = Decimal("3")
+orig_ctx = getcontext()
+ctx = Context(prec=5)
+setcontext(ctx)
+try:
+    print("Custom decimal context:", one / three)
+finally:
+    setcontext(orig_ctx)
+print("Original context restored:", one / three)
+
+# OR same on Pythonic style
+one = Decimal("1")
+three = Decimal("3")
+with localcontext(Context(prec=5)) as ctx:
+    print("Custom decimal context:", one / three)
+print("Original context restored:", one / three)
