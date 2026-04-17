@@ -1,6 +1,8 @@
+# from zipfile import ZipFile
+import time
 from pathlib import Path
-from zipfile import ZipFile
 
+start = time.perf_counter()
 # Simple open file
 base_dir = Path(__file__).parent
 path = base_dir / "fear.txt"
@@ -78,6 +80,9 @@ print(f"path.is_dir(): {path.is_dir()}")
 p = base_dir
 for entry in p.glob("*"):
     print("File:" if entry.is_file() else "Folder:", entry)
+
+end = time.perf_counter()
+print(f"Elapsed time: {end - start} seconds")
 
 # File Three walking
 # p = Path(".")
