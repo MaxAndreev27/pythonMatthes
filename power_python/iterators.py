@@ -29,7 +29,8 @@ def gen_nums(N):
         yield n
         n += 1
 
-print('Use function generator in for:')
+
+print("Use function generator in for:")
 for num in gen_nums(5):
     print(num)
 
