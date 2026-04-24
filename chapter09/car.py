@@ -7,7 +7,7 @@ class Car:
         self.model = model
         self.year = year
         self.odometer = 0
-        self._color = color
+        self.color = color
 
     @property
     def color(self):
