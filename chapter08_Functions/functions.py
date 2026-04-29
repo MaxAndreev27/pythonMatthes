@@ -31,13 +31,13 @@ describe_pet(pet_name="harry", animal_type="hamster")
 
 
 # Default value for parameter
-def describe_pet(pet_name, animal_type="dog"):
+def describe_pet_with_default_param(pet_name, animal_type="dog"):
     """Выводит информацию о животном."""
     print(f"\nI have a {animal_type}.")
     print(f"My {animal_type}'s name is {pet_name.title()}.")
 
 
-describe_pet(pet_name="Willie")
+describe_pet_with_default_param(pet_name="Willie")
 
 
 # Return value from function
