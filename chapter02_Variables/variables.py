@@ -2,7 +2,10 @@ from decimal import Context, Decimal, getcontext, localcontext, setcontext
 
 # Simple string var
 message = "This is new message"
+print(f"All attributes of message: {dir(message)}")
 print(message)
+
+print(f"ID in memory of message variable: {id(message)}")
 
 # formatting string
 firstName = "ada"
