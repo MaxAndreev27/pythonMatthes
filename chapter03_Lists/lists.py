@@ -35,11 +35,11 @@ print(f"The first motorcycle I owned was a {first_owned.title()}.")
 print(motorcycles)
 
 # Removing element by value
-motorcycles.remove('suzuki')
+motorcycles.remove("suzuki")
 print(motorcycles)
 
 # Sorting elements of list and change order
-cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars = ["bmw", "audi", "toyota", "subaru"]
 cars.sort()
 print(cars)
 cars.sort(reverse=True)
@@ -55,3 +55,8 @@ print(f"Reverse: {cars}")
 
 # Length of list
 print(f"Length: {len(cars)}")
+
+# 3 Way to copy list
+new_cars = cars.copy()
+new_cars2 = cars[:]
+new_cars3 = list(cars)

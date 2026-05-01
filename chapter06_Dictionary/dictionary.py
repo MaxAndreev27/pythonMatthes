@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 alien_0 = {"color": "green", "points": 5}
 
 print(alien_0["color"])
@@ -102,3 +104,21 @@ for username, user_info in users.items():
 
     print(f"\tFull name: {full_name.title()}")
     print(f"\tLocation: {location.title()}")
+
+# Deepcopy
+info = {
+    "name": "John",
+    "age": 45,
+    "languages": ["c"],
+}
+
+info_copy = info.copy()
+info["languages"].append("php")
+info_deep_copy = deepcopy(info)
+info_deep_copy["languages"].append("python")
+
+print(f"Address languages: {id(info['languages'])} Content info: {info}")
+print(f"Address languages: {id(info_copy['languages'])} Content info_copy: {info}")
+print(
+    f"Address languages: {id(info_deep_copy['languages'])} Content info_deep_copy: {info}"
+)
