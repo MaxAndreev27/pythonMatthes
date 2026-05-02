@@ -97,3 +97,18 @@ user_profile = build_profile(
     "albert", "einstein", location="princeton", field="physics"
 )
 print(user_profile)
+
+# Use global
+a = 10
+
+
+def print_num():
+    global a
+    a = 15
+    print(f"Use global a: {a}")
+    # c = 20
+    # print(dir())
+
+
+print_num()
+print(f"Global a: {a}")
