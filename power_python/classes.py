@@ -4,6 +4,8 @@ import re
 
 # Simle class with getters and setters
 class Money:
+    type = "USD"
+
     def __init__(self, dollars, cents):
         self.total_cents = dollars * 100 + cents
 
@@ -41,7 +43,13 @@ class Money:
         self.total_cents = 100 * self.dollars + new_cents
 
 
+print(Money.type)
+
 piggie_bank_cash = Money.from_pennies(3217)
+piggie_bank_cash.type = "UAH"
+print(Money.type)
+print(piggie_bank_cash.type)
+
 print(f"piggie_bank_cash: {piggie_bank_cash.total_cents}")
 
 m2 = Money.from_string("$140.75")
