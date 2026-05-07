@@ -113,9 +113,9 @@ info = {
 }
 
 info_copy = info.copy()
-info["languages"].append("php")
 info_deep_copy = deepcopy(info)
 info_deep_copy["languages"].append("python")
+info_copy["languages"].append("php")
 
 print(f"Address languages: {id(info['languages'])} Content info: {info}")
 print(f"Address languages: {id(info_copy['languages'])} Content info_copy: {info}")

@@ -62,6 +62,7 @@ except ZeroDivisionError:
 else:
     print(f"Result 5/2={result}")
 
+
 # Exception in file read
 def count_words(path):
     """Подсчитывает приблизительное количество строк в файле."""
@@ -107,7 +108,7 @@ def greet_user():
         print(f"Welcome back, {username}!")
     else:
         username = input("What is your name? ")
-        contents = json.dumps(username)
+        contents = json.dumps(username, indent=4)
         path.write_text(contents)
         print(f"We'll remember you when you come back, {username}!")
 
