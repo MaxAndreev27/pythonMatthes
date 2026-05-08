@@ -1,6 +1,8 @@
 asgiref==3.11.1
-Django==6.0.4
+Django==6.0.5
 django-bootstrap5==26.2
 django-types==0.24.0
+packaging==26.2
+pip-review==1.3.0
 sqlparse==0.5.5
-types-psycopg2==2.9.21.20260422
+types-psycopg2==2.9.21.20260508
