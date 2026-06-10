@@ -1,0 +1,44 @@
+from abc import ABC, abstractmethod
+
+# BAD practice
+# class Worker(ABC):
+#     @abstractmethod
+#     def work(self): pass
+
+#     @abstractmethod
+#     def eat(self): pass
+
+# class Robot(Worker):
+#     def work(self):
+#         print("Робот працює...")
+
+#     def eat(self):
+#         # Роботи не їдять. Ми змушені писати пустий метод/костиль
+#         pass
+
+
+class Workable(ABC):
+    @abstractmethod
+    def work(self):
+        pass
+
+
+class Eatable(ABC):
+    @abstractmethod
+    def eat(self):
+        pass
+
+
+# Робот реалізує тільки те, що йому потрібно
+class Robot(Workable):
+    def work(self):
+        print("Робот працює...")
+
+
+# Людина реалізує обидва інтерфейси
+class Human(Workable, Eatable):
+    def work(self):
+        print("Людина працює...")
+
+    def eat(self):
+        print("Людина обідає...")
