@@ -24,3 +24,16 @@ The code is organized dynamically by topic depth, mapping directly to the specia
 ├── 07-data-science-visualization/  # Data processing, charts (Matplotlib/Plotly), and REST API analysis
 └── 08-software-engineering/        # Robust exception handling, unit testing, optimization, and packaging
 ```
+
+## 📜 Community Standards
+
+This repository adheres to GitHub's 100% Community Standards to ensure open, high-quality, and maintainable software practices:
+
+- **License**: [LICENSE](LICENSE) (MIT License)
+- **Code of Conduct**: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- **Contributing Guidelines**: [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Security Policy**: [SECURITY.md](SECURITY.md)
+- **Issue Templates**:
+  - [Bug Report Template](.github/ISSUE_TEMPLATE/bug_report.md)
+  - [Feature Request Template](.github/ISSUE_TEMPLATE/feature_request.md)
+- **Pull Request Template**: [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md)
