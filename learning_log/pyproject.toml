@@ -1,0 +1,17 @@
+[project]
+name = "learning-log"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=6.0.5",
+    "django-bootstrap5>=26.2",
+]
+
+[dependency-groups]
+dev = [
+    "django-types>=0.24.0",
+    "types-psycopg2>=2.9.21.20260508",
+]
+
+[tool.uv]
+package = false

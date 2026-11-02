@@ -10,20 +10,57 @@ The objective of this collection is to advance from standard programming paradig
 
 ## 🚀 Repository Structure
 
-The code is organized dynamically by topic depth, mapping directly to the specialized tracks inside these three publications:
+Each chapter is a separate folder. Folders with third-party dependencies are standalone uv projects (`pyproject.toml` + `uv.lock` + `.python-version`).
 
 ```text
 .
 ├── README.md
-├── 01-foundations-and-tooling/     # Core structures, type hinting, and environment isolation
-├── 02-idiomatic-python/            # List comprehensions, generators, iterators, and clean code patterns
-├── 03-functional-programming/       # Lambda functions, map/filter/reduce, and itertools modules
-├── 04-advanced-oop/                # Multiple inheritance, MRO, dunder (magic) methods, and abstract base classes
-├── 05-metaprogramming/             # Custom decorators, property getters/setters, descriptors, and metaclasses
-├── 06-concurrency-parallelism/     # Multithreading, multiprocessing, and asynchronous I/O (asyncio)
-├── 07-data-science-visualization/  # Data processing, charts (Matplotlib/Plotly), and REST API analysis
-└── 08-software-engineering/        # Robust exception handling, unit testing, optimization, and packaging
+├── alien_invasion/                  # Pygame project (uv project)
+├── chapter01_Hello/                 # Hello world
+├── chapter02_Variables/             # Variables
+├── chapter03_Lists/                 # Lists
+├── chapter04_WorkLists/             # Working with lists
+├── chapter05_IfOperator/            # Conditional operator
+├── chapter06_Dictionary/            # Dictionaries
+├── chapter07_While/                 # While loops
+├── chapter08_Functions/             # Functions and modules
+├── chapter09_Classes/               # Classes
+├── chapter10_Files/                 # Files, exceptions, JSON, CSV
+├── chapter11_Tests/                 # Testing with pytest (uv project)
+├── chapter15_DataAnalysisPlotly/    # Matplotlib/Plotly basics (uv project)
+├── chapter16_LoadData/              # CSV/JSON data loading (uv project)
+├── chapter17_API/                   # Web APIs (uv project)
+├── chapter18_JupiterNotebook/       # Jupyter notebooks (uv project)
+├── chapter19_NumPy/                 # NumPy (uv project)
+├── chapter20_Pandas/                # Pandas (uv project)
+├── chapter21_Matplotlib/            # Matplotlib/Seaborn (uv project)
+├── chapter22_Scikitlearn/           # Scikit-learn (uv project)
+├── chapter23_async/                 # asyncio
+├── chapter24_SOLID/                 # SOLID principles
+├── learning_log/                    # Django web app (uv project)
+└── power_python/                    # Powerful Python: decorators, generators, iterators, etc.
 ```
+
+## ⚙️ Environment (uv)
+
+Python 3.12 is managed with [uv](https://docs.astral.sh/uv/). Install it once:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Work inside a chapter folder that has a `pyproject.toml`:
+
+```bash
+cd chapter15_DataAnalysisPlotly
+uv sync                          # creates .venv and installs locked dependencies
+uv run python mpl_squares.py     # run a script in the project environment
+uv add <package>                 # add a dependency (updates pyproject.toml and uv.lock)
+uv lock --upgrade                # refresh uv.lock to the latest allowed versions
+```
+
+Examples: `cd chapter11_Tests && uv run pytest`, `cd learning_log && uv run python manage.py runserver`.
+For Jupyter chapters, select the `.venv` interpreter as the notebook kernel. Chapters without a `pyproject.toml` use only the standard library: `uv run python file.py`.
 
 ## 📜 Community Standards
 

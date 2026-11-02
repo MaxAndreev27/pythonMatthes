@@ -1,4 +1,0 @@
-packaging==26.2
-pygame==2.6.1
-setuptools==82.0.1
-wheel==0.47.0

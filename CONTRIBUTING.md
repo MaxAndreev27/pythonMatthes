@@ -22,10 +22,13 @@ Thank you for considering contributing to the **Python Advanced Mastering** stud
    git checkout -b feature/your-feature-name
    ```
 2. Make your changes adhering to project coding standards (PEP 8).
-3. Run existing tests or add new unit tests where applicable:
+3. Set up the chapter's environment with [uv](https://docs.astral.sh/uv/) (Python 3.12; see the README) and run existing tests or add new unit tests where applicable:
    ```bash
-   pytest
+   cd chapter11_Tests
+   uv sync
+   uv run pytest
    ```
+   When adding dependencies, use `uv add <package>` and commit both `pyproject.toml` and `uv.lock` (do not commit `.venv`).
 4. Commit your changes with clear, descriptive commit messages.
 5. Push to your fork and submit a Pull Request targeting the `main` branch.
 

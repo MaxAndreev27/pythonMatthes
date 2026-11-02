@@ -1,0 +1,12 @@
+[project]
+name = "chapter17-api"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=3.0.2",
+    "plotly>=6.7.0",
+    "requests>=2.33.1",
+]
+
+[tool.uv]
+package = false

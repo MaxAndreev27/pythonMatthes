@@ -17,5 +17,6 @@ Closes # (issue number if applicable)
 
 - [ ] Code follows project PEP 8 standards
 - [ ] Added/updated unit tests if applicable
-- [ ] All tests pass locally (`pytest`)
+- [ ] All tests pass locally (`uv run pytest`)
+- [ ] Dependency changes are reflected in `pyproject.toml` and `uv.lock`
 - [ ] Documentation updated as required

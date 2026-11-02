@@ -26,6 +26,8 @@ A clear description of what you expected to happen.
 
 - OS: [e.g. Linux / macOS / Windows]
 - Python Version: [e.g. 3.12]
+- uv Version: [output of `uv --version`]
+- Chapter / Project: [e.g. chapter11_Tests]
 - Key Dependencies: [e.g. pytest, matplotlib]
 
 ## Additional Context

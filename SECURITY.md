@@ -7,7 +7,9 @@ Security updates and fixes are provided for the latest version of the codebase o
 | Version | Supported          |
 | ------- | ------------------ |
 | Main    | :white_check_mark: |
-| < 1.0   | :x:                |
+| Other branches / old commits | :x: |
+
+Dependencies are pinned in each project's `uv.lock` (Python 3.12). Update them with `uv lock --upgrade` to pick up security fixes.
 
 ## Reporting a Vulnerability
 
